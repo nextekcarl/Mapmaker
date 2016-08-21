@@ -7,3 +7,7 @@
   %button{id: 'generate-map'} Generate Map
 
   %svg{width: "800", id: 'map'}
+  :JavaScript
+    $('#generate-map').on("click", function () {
+      doMap(d3.select('#map'), detailedParams);
+    });

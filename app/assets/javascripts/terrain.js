@@ -1030,7 +1030,7 @@ function drawLabels(svg, render) {
 
 }
 function drawMap(svg, render) {
-    render.rivers = getRivers(render.h, 0.01);
+    render.rivers = getRivers(render.h, runif(0.001, 0.01));
     render.coasts = contour(render.h, 0);
     render.terr = getTerritories(render);
     render.borders = getBorders(render);
@@ -1074,9 +1074,9 @@ var defaultParams = {
 var detailedParams = {
     extent: defaultExtent,
     generator: generateCoast,
-    npts: 48000,
-    ncities: 15,
-    nterrs: 5,
+    npts: 25000,
+    ncities: Math.round(runif(5, 12)),
+    nterrs: Math.round(runif(0, 6)),
     fontsizes: {
         region: 25,
         city: 12,
