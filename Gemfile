@@ -33,6 +33,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml'
 gem 'bootstrap'
 
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
