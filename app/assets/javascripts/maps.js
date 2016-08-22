@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   $('body').on("click", '#generate-map', function () {
     doMap(d3.select('#map'), detailedParams);
     $('body text.region').show();
