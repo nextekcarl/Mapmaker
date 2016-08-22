@@ -1,5 +1,18 @@
 $(document).on('turbolinks:load', function() {
   $('body').on("click", '#generate-map', function () {
+    var detailedParams = {
+        extent: defaultExtent,
+        generator: generateCoast,
+        npts: Math.floor((Math.random() * 10) + 20) * 1000,
+        ncities: Math.floor((Math.random() * 8) + 5),
+        nterrs: Math.floor((Math.random() * 10) + 1),
+        mountains: Math.floor((Math.random() * 70) + 30),
+        fontsizes: {
+            region: 25,
+            city: 15,
+            town: 12
+        }
+    }
     doMap(d3.select('#map'), detailedParams);
     $('body text.region').show();
     $('body .city').show();
