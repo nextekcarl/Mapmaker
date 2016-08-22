@@ -824,7 +824,7 @@ function generateCoast(params) {
     var h = add(
             slope(mesh, randomVector(4)),
             cone(mesh, runif(-1, -1)),
-            mountains(mesh, 50)
+            mountains(mesh, params.mountains)
             );
     for (var i = 0; i < 10; i++) {
         h = relax(h);
@@ -1064,6 +1064,7 @@ var defaultParams = {
     npts: 16384,
     ncities: 15,
     nterrs: 5,
+    mountains: 50,
     fontsizes: {
         region: 40,
         city: 25,
@@ -1074,9 +1075,10 @@ var defaultParams = {
 var detailedParams = {
     extent: defaultExtent,
     generator: generateCoast,
-    npts: 25000,
+    npts: Math.round(runif(20, 30)) * 1000,
     ncities: Math.round(runif(5, 12)),
     nterrs: Math.round(runif(0, 6)),
+    mountains: Math.round(runif(30, 100)),
     fontsizes: {
         region: 25,
         city: 12,
