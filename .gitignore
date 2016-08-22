@@ -49,5 +49,4 @@ latest.dump
 lib/templates
 public/system
 .tddium*
-/bin
 .env
