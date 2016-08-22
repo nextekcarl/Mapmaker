@@ -1,0 +1,11 @@
+.core-template
+  %h1
+    =@map.name
+  .sidebar
+    %p
+      =@map.description
+  .main-content
+    %button{id: 'toggle-regions'} Toggle Regions
+    %button{id: 'toggle-cities'} Toggle Cities
+    %button{id: 'toggle-rivers'} Toggle Rivers
+    =@map.svg.html_safe

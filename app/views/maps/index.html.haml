@@ -1,13 +1,26 @@
-.content
+.core-template
   %h1
-    Welcome to MapMaker v1.0,
-  %p
-    based upon the work of
-    %a{title: 'Original source', href: 'https://github.com/mewo2/terrain'} Martin O'Leary
-  %button{id: 'generate-map'} Generate Map
-
-  %svg{width: "800", id: 'map'}
-  :JavaScript
-    $('#generate-map').on("click", function () {
-      doMap(d3.select('#map'), detailedParams);
-    });
+    Welcome to MapMaker v1.0
+  .sidebar
+    %p
+      This is the list of every map saved with this system. Eventually I'll add
+      methods to edit region names and cities, add descriptions and such to them
+      but for now this will do.
+  .main-content
+    %table.table-striped.table-bordered.table-hover
+      %tbody
+        %tr
+          %th
+            id
+          %th
+            name
+          %th
+            description
+        -@maps.each do |map|
+          %tr
+            %td
+              =map.id
+            %td
+              =link_to map.name, map_path(map)
+            %td
+              =truncate(map.description, length: 50)
