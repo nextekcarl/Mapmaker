@@ -1077,7 +1077,7 @@ var detailedParams = {
     generator: generateCoast,
     npts: Math.round(runif(20, 30)) * 1000,
     ncities: Math.round(runif(5, 12)),
-    nterrs: Math.round(runif(0, 6)),
+    nterrs: Math.round(runif(1, 6)),
     mountains: Math.round(runif(30, 100)),
     fontsizes: {
         region: 25,
