@@ -784,6 +784,13 @@ function visualizeBorders(h, cities, n) {
     drawPaths('border', links);
 }
 
+function smallRadius() {
+  return Math.floor((Math.random() * 4) + 2);
+}
+
+function largeRadius() {
+  return Math.floor((Math.random() * 5) + 7);
+}
 
 function visualizeCities(svg, render) {
     var cities = render.cities;
@@ -799,7 +806,7 @@ function visualizeCities(svg, render) {
     svg.selectAll('circle.city')
         .attr('cx', function (d) {return 1000*h.mesh.vxs[d][0]})
         .attr('cy', function (d) {return 1000*h.mesh.vxs[d][1]})
-        .attr('r', function (d, i) {return i >= n ? 4 : 10})
+        .attr('r', function (d, i) {return i >= n ? smallRadius() : largeRadius() })
         .style('fill', 'white')
         .style('stroke-width', 5)
         .style('stroke-linecap', 'round')
