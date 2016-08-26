@@ -15,6 +15,7 @@ class MapsController < ApplicationController
 
   def create
     if @map = Map.create(map_params)
+      @map.save_cities
       redirect_to map_path(@map), :notice => "Map was saved"
     else
       render :new, :error => "Map save failed!"

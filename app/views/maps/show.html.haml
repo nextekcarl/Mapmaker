@@ -8,4 +8,21 @@
     %button{id: 'toggle-regions'} Toggle Regions
     %button{id: 'toggle-cities'} Toggle Cities
     %button{id: 'toggle-rivers'} Toggle Rivers
+    %table.table-striped.table-bordered.table-hover
+      %tbody
+        %tr
+          %th
+            name
+          %th
+            population
+          %th
+            description
+        -@map.cities.each do |city|
+          %tr
+            %td
+              =city.name
+            %td
+              =city.population
+            %td
+              =truncate(city.description, length: 50)
     =@map.svg.html_safe

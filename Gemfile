@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'haml'
 gem 'bootstrap'
+gem 'nokogiri'
 
 group :production, :staging do
   gem 'rails_12factor'
