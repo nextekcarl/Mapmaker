@@ -68,3 +68,8 @@ text.region {
 svg {
     background-color: white;
 }
+
+table.table-centered {
+  margin-right: auto;
+  margin-left: auto;
+}
