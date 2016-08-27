@@ -8,9 +8,9 @@ $(document).on('turbolinks:load', function() {
         nterrs: Math.floor((Math.random() * 10) + 1),
         mountains: Math.floor((Math.random() * 70) + 30),
         fontsizes: {
-            region: 25,
-            city: 15,
-            town: 12
+            region: 30,
+            city: 20,
+            town: 15
         }
     }
     doMap(d3.select('#map'), detailedParams);
@@ -48,5 +48,14 @@ $(document).on('turbolinks:load', function() {
     }).fail({
 
     });
+  });
+
+  $('body').on("click", '.x-highlight-city', function () {
+    var $city = $(this).data('city');
+    $('svg').children("text.city:contains('"+$city+"')")
+            .toggle('highlight')
+            .fadeIn()
+            .toggle('highlight')
+            .fadeIn();
   });
 });

@@ -1037,7 +1037,7 @@ function drawLabels(svg, render) {
 
 }
 function drawMap(svg, render) {
-    render.rivers = getRivers(render.h, runif(0.001, 0.01));
+    render.rivers = getRivers(render.h, runif(0.005, 0.1));
     render.coasts = contour(render.h, 0);
     render.terr = getTerritories(render);
     render.borders = getBorders(render);
