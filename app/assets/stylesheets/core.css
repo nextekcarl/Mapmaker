@@ -73,3 +73,9 @@ table.table-centered {
   margin-right: auto;
   margin-left: auto;
 }
+
+#loading-indicator {
+  position: fixed;
+  left: 10px;
+  top: 60px;
+}
