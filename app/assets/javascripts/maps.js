@@ -11,7 +11,7 @@ function generateMap() {
   var detailedParams = {
       extent: defaultExtent,
       generator: generateCoast,
-      npts: Math.floor((Math.random() * 10) + 20) * 1000,
+      npts: Math.floor((Math.random() * 10) + 13) * 1000,
       ncities: Math.floor((Math.random() * 8) + 5),
       nterrs: Math.floor((Math.random() * 10) + 1),
       mountains: Math.floor((Math.random() * 70) + 30),
