@@ -69,4 +69,14 @@ $(document).on('turbolinks:load', function() {
             .toggle('highlight')
             .fadeIn();
   });
+  $('div.new-map').on("click", 'text', function (event) {
+    var $text = $( this ).context;
+    var $newName = window.prompt("What is the new name for ", $text.innerHTML);
+    $text.innerHTML = $newName;
+  });
+  $('div.new-map').on("click", 'circle', function (event) {
+    var $text = $( this ).context;
+    var $newRadius = window.prompt("What is the new size?", $text.getAttribute('r'));
+    $text.setAttribute('r', $newRadius);
+  });
 });

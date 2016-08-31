@@ -3,13 +3,12 @@
     Welcome to MapMaker v1.0
   .sidebar
     %p
-      Based upon the work of
-      %a{title: 'Original source', href: 'https://github.com/mewo2/terrain'} Martin O'Leary
-      without whom this project wouldn't exist.
-      I've tweaked some of the default settings he used in the demo and randomized others,
-      as well as added a way to save the more interesting maps found.
       You can toggle the visibility of the region names and cities, in case they are covering up
       something interesting, but they will be saved in either case.
+    %p
+      You can also click on a name to change it before saving it. After that it becomes more difficult to change.
+      In the same way, you can change the size of a city by clicking on the circle.
+
   %button{id: 'generate-map'} Generate Map
   %button{id: 'toggle-regions'} Toggle Regions
   %button{id: 'toggle-cities'} Toggle Cities
@@ -24,4 +23,5 @@
         %br
         =f.label :description
         =f.text_area :description
-    %svg{width: "800", id: 'map'}
+    .new-map
+      %svg{width: "800", id: 'map'}
