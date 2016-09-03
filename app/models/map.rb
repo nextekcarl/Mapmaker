@@ -9,7 +9,9 @@ class Map < ApplicationRecord
     city_stats = nodes.css("circle.city")
     cities = {}
     city_names.each_with_index do |city, idx|
-      cities[city.text] = city_stats[idx].attributes["r"].value.to_i
+      cities[city.text] = {}
+      cities[city.text][:population] = city_stats[idx].attributes["r"].value.to_i
+      cities[city.text][:color] = city_stats[idx].attributes["style"].value.match(/fill:\s(\w+);.+/)[1]
     end
 
     return cities
@@ -19,8 +21,8 @@ class Map < ApplicationRecord
     if self.cities.blank?
       new_cities = parse_cities
       City.transaction do
-        new_cities.each do |name, population|
-          cities.create!(name: name, population: population)
+        new_cities.each do |name, stats|
+          cities.create!(name: name, population: stats[:population], color: stats[:color] )
         end
       end
     end

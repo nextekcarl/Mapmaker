@@ -10,12 +10,15 @@
               name
             %th
               pop
+            %th
+              color
           -@map.cities.each do |city|
             %tr{class: "x-highlight-city", data: {city: "#{city.name}"}}
               %td
                 =city.name
               %td
                 =city.population
+              %td{style: "background: #{city.color}"}
       =@map.description
   .main-content
     %button{id: 'toggle-regions'} Toggle Regions
