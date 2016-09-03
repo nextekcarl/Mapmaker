@@ -72,7 +72,9 @@ $(document).on('turbolinks:load', function() {
   $('div.new-map').on("click", 'text', function (event) {
     var $text = $( this ).context;
     var $newName = window.prompt("What is the new name for ", $text.innerHTML);
-    $text.innerHTML = $newName;
+    if ($newName != null){
+      $text.innerHTML = $newName;
+    }
   });
   $('div.new-map').on("click", 'circle', function (event) {
     var $text = $( this ).context;
