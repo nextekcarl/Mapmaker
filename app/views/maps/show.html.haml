@@ -1,3 +1,7 @@
+- if @map.island?
+  %style{:type => "text/css"}
+    ='path.coast {fill: white;}'.html_safe
+    ='svg {background-color: blue;}'.html_safe
 .core-template
   %h1
     =@map.name
